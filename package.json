@@ -12,10 +12,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/florianheinemann/passport-dropbox-oauth2.git"
+    "url": "https://github.com/andrepcg/Meocloud-Passport-Oauth2.git"
   },
   "bugs": {
-    "url": "http://github.com/florianheinemann/passport-dropbox-oauth2/issues"
+    "url": "https://github.com/andrepcg/Meocloud-Passport-Oauth2/issues"
   },
   "author": {
     "name": "André Perdigãon",
