@@ -1,5 +1,5 @@
-# Passport-Dropbox-OAuth2
-[Passport](http://passportjs.org/) strategy for authenticating with [Dropbox](https://dropbox.com/)
+# Passport-Meocloud-OAuth2
+[Passport](http://passportjs.org/) strategy for authenticating with [Meocloud](https://dropbox.com/)
 using the OAuth 2.0 API.
 
 This module lets you authenticate using Dropbox in your Node.js applications.
@@ -9,20 +9,20 @@ unobtrusively integrated into any application or framework that supports
 [Express](http://expressjs.com/).
 
 ## Install
-    $ npm install passport-dropbox-oauth2
+    $ npm install passport-meocloud-oauth2
 
 ## Usage
 ### Configure Strategy
 
-The Dropbox authentication strategy authenticates users using a Dropbox account
+The Meocloud authentication strategy authenticates users using a Meocloud account
 and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which accepts
 these credentials and calls `done` providing a user, as well as `options`
 specifying a client ID, client secret, and callback URL.
 
-    passport.use(new DropboxOAuth2Strategy({
-        clientID: DROPBOX_CLIENT_ID,
-        clientSecret: DROPBOX_CLIENT_SECRET,
-        callbackURL: "https://www.example.net/auth/dropbox-oauth2/callback"
+    passport.use(new MeocloudStrategy({
+        clientID: MEOCLOUD_CONSUMER_KEY,
+        clientSecret: MEOCLOUD_SECRET,
+        callbackURL: "https://www.example.net/auth/meocloud/callback"
       },
       function(accessToken, refreshToken, profile, done) {
         User.findOrCreate({ providerId: profile.id }, function (err, user) {
@@ -38,11 +38,11 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
-    app.get('/auth/dropbox',
-      passport.authenticate('dropbox-oauth2'));
+    app.get('/auth/meocloud',
+      passport.authenticate('meocloud-oauth2'));
 
-    app.get('/auth/dropbox/callback', 
-      passport.authenticate('dropbox-oauth2', { failureRedirect: '/login' }),
+    app.get('/auth/meocloud/callback', 
+      passport.authenticate('meocloud-oauth2', { failureRedirect: '/login' }),
       function(req, res) {
         // Successful authentication, redirect home.
         res.redirect('/');
